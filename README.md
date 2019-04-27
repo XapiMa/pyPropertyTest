@@ -36,3 +36,11 @@ class Test:
     def get_and_set(self, get_and_set):
         self.__get_and_set = get_and_set
 ```
+
+or
+
+```python
+class Test:
+    def __init__(self):
+        self.another_get_and_set = "another_get_and_set"
+```
