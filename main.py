@@ -4,6 +4,7 @@ class Test:
         self.__get_only = "get_only"
         self.__set_only = "set_only"
         self.__get_and_set = "get_and_set"
+        self.another_get_and_set = "another_get_and_set"
     
     @property
     def get_only(self):
@@ -52,6 +53,15 @@ if __name__ == "__main__":
         print("get_and_set CAN set the value")
     except AttributeError:
         print("get_and_set CAN NOT set the value")
-    test.get_and_set = "get_and_set changed"
-    
+
+    try:
+        _ = test.another_get_and_set
+        print("another_get_and_set CAN be referenced")
+    except AttributeError:
+        print("another_get_and_set CAN NOT be referenced")
+    try:
+        test.another_get_and_set = "another_get_and_set changed"
+        print("another_get_and_set CAN set the value")
+    except AttributeError:
+        print("another_get_and_set CAN NOT set the value")
 
